@@ -1,0 +1,19 @@
+- name: setting up backend server
+  hosts: backend
+  become: yes
+  tasks:
+  - name: Disabling the default version
+    ansible.builtin.command: dnf module disable nodejs -y
+
+  - name: Enabling the required version
+    ansible.builtin.command: dnf module enable nodejs:20 -y
+
+  - name: installing NodeJS
+    ansible.builtin.dnf:
+      name: nodejs
+      state: installed
+  
+  - name: enabling and starting
+    ansible.builtin.service:
+      state: started
+  
