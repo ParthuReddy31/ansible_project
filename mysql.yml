@@ -24,7 +24,7 @@
       login_password: ExpenseApp@1
       login_host: mysql.parthudevops.space
     register: mysql_info
-    ignore_error: true
+    ignore_errors: true
   
   - name: Printing info
     ansible.builtin.debug:
