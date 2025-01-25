@@ -13,5 +13,13 @@
       enabled: yes
       state: started
 
-  # - name: 
+  - name: connect to mysql server
+    community.mysql.mysql_info:
+      login_user: root
+      login_password: ExpenseApp@1
+      login_host: mysql.parthudevops.space
+    register: mysql_info
   
+  - name: Printing info
+    ansible.builtin.debug:
+      msg: "{{ mysql_info }}"
