@@ -6,4 +6,12 @@
     ansible.builtin.dnf:
       name: mysql-server
       state: installed
-      
+  
+  - name: enable the server
+    ansible.builtin.service:
+      name: mysqld
+      enabled: yes
+      state: started
+
+  # - name: 
+  
