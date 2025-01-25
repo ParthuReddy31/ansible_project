@@ -14,5 +14,7 @@
       state: installed
   
   - name: creating expense user
+    tags:
+    - user
     ansible.builtin.user:
       name: expense
