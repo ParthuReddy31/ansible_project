@@ -1,5 +1,5 @@
 - name: settingup frontend nginx
-  hosts: frontend.parthudevops.space
+  hosts: frontend
   become: yes
   tasks:
   - name: installing nginx
